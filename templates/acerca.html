@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ app_name }} - Acerca de</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- NAVEGACIÓN -->
+        <nav>
+            <div class="nav-tabs">
+                <a href="{{ url_for('index') }}" class="nav-tab">Inicio</a>
+                <a href="{{ url_for('test') }}" class="nav-tab">Test</a>
+                <a href="{{ url_for('estadisticas') }}" class="nav-tab">Estadísticas</a>
+                <a href="{{ url_for('acerca') }}" class="nav-tab active">Acerca de</a>
+            </div>
+        </nav>
+
+        <div class="about-screen">
+            <h2>Acerca de este Proyecto</h2>
+            
+            <p>
+                <strong>{{ app_name }}</strong> es un sistema inteligente de recomendación vocacional
+                diseñado para ayudarte a descubrir la carrera tecnológica perfecta según tu perfil,
+                aptitudes e intereses.
+            </p>
+
+            <p>
+                Utilizamos <strong>algoritmos de machine learning</strong> para procesar tus respuestas
+                y proporcionar recomendaciones precisas de las 10 principales carreras en tecnología.
+            </p>
+
+            <h3 style="margin-top: 30px; color: var(--primary);">Stack Tecnológico</h3>
+            <div class="tech-stack">
+                <div class="tech-badge">Python 3.x</div>
+                <div class="tech-badge">Flask</div>
+                <div class="tech-badge">Machine Learning</div>
+                <div class="tech-badge">HTML5</div>
+                <div class="tech-badge">CSS3</div>
+                <div class="tech-badge">Jinja2 Templates</div>
+                <div class="tech-badge">JSON</div>
+                <div class="tech-badge">REST API</div>
+            </div>
+
+            <h3 style="margin-top: 30px; color: var(--primary);">Características Principales</h3>
+            <ul class="features-list">
+                <li>30 preguntas personalizadas sin tecnicismos</li>
+                <li>Algoritmo de votación ponderada para recomendaciones precisas</li>
+                <li>10 carreras tecnológicas diferentes</li>
+                <li>Interfaz moderna, responsiva y amigable</li>
+                <li>Estadísticas en tiempo real</li>
+                <li>Historial de tests persistente</li>
+                <li>Backend dinámico con Flask (sin JavaScript)</li>
+                <li>Arquitectura modular y escalable</li>
+            </ul>
+
+            <h3 style="margin-top: 30px; color: var(--primary);">Las 10 Carreras</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                {% for carrera in carreras %}
+                <div style="background: var(--light); padding: 15px; border-radius: 8px; border-left: 4px solid var(--primary);">
+                    <h4 style="color: var(--primary); margin-bottom: 8px;">{{ carrera }}</h4>
+                </div>
+                {% endfor %}
+            </div>
+
+            <h3 style="margin-top: 30px; color: var(--primary);">Información del Proyecto</h3>
+            <ul class="features-list">
+                <li><strong>Nombre:</strong> Vocational AI Recommender</li>
+                <li><strong>Versión:</strong> {{ app_version }}</li>
+                <li><strong>Desarrollado para:</strong> Samsung Innovation Campus</li>
+                <li><strong>Tipo:</strong> Proyecto Final</li>
+                <li><strong>Última actualización:</strong> Diciembre 2024</li>
+                <li><strong>Estado:</strong> Production Ready</li>
+            </ul>
+
+            <h3 style="margin-top: 30px; color: var(--primary);">Cómo Funciona</h3>
+            <ol style="color: #666; line-height: 1.8;">
+                <li><strong>Responde el test:</strong> Contesta 30 preguntas sobre tus intereses</li>
+                <li><strong>Procesamiento:</strong> El sistema analiza tus respuestas</li>
+                <li><strong>Recomendaciones:</strong> Recibe 2 carreras personalizadas</li>
+                <li><strong>Estadísticas:</strong> Visualiza tu historial y análisis</li>
+            </ol>
+
+            <div style="background: #e8f5e9; border: 2px solid var(--success); padding: 20px; border-radius: 8px; margin-top: 30px; text-align: center;">
+                <p style="color: var(--success); font-weight: 600;">
+                    Todos los datos se guardan localmente en tu computadora
+                </p>
+                <p style="color: #666; font-size: 13px; margin-top: 10px;">
+                    Tu privacidad es importante. No compartimos información con terceros.
+                </p>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="{{ url_for('test') }}" class="btn-primary">Comenzar Test</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
