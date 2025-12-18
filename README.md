@@ -34,8 +34,6 @@ Este enfoque evita recomendaciones lógicamente incompatibles
 
 ## 🧩 Arquitectura del sistema
 
-### Flujo de recomendación (v2)
-
 1. Respuesta al cuestionario (18 técnicas + 12 blandas)
 2. Construcción del vector de usuario (27 features)
 3. Normalización y análisis de dominancia técnica
