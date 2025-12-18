@@ -1,0 +1,48 @@
+{
+  "total_tests": 1,
+  "compatibilidad_promedio": 22,
+  "carrera_popular": "Artificial Intelligence (AI)",
+  "tasa_completacion": 100,
+  "por_carrera": {
+    "Artificial Intelligence (AI)": {
+      "count": 1,
+      "promedio": 44
+    },
+    "Data analysts and scientists": {
+      "count": 0,
+      "promedio": 0
+    },
+    "Cybersecurity analyst": {
+      "count": 0,
+      "promedio": 0
+    },
+    "Cloud engineers": {
+      "count": 0,
+      "promedio": 0
+    },
+    "DevOps engineers": {
+      "count": 0,
+      "promedio": 0
+    },
+    "Full stack developers": {
+      "count": 0,
+      "promedio": 0
+    },
+    "Blockchain engineers": {
+      "count": 0,
+      "promedio": 0
+    },
+    "UX/UI Product Designers": {
+      "count": 0,
+      "promedio": 0
+    },
+    "Product Managers": {
+      "count": 0,
+      "promedio": 0
+    },
+    "Network and Systems Administrators": {
+      "count": 0,
+      "promedio": 0
+    }
+  }
+}

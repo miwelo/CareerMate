@@ -1,19 +1,16 @@
+from datetime import datetime
 import os
 from functools import wraps
-from datetime import datetime
-
 from flask import Flask, render_template, request, redirect, url_for, session
 
 from models.preguntas import contar_preguntas, obtener_todas_preguntas
 from models.carreras import CARRERAS_OBJETIVO
-from models.recomendador import calcular_estadisticas, recomendar_carreras, construir_vector_usuario
-from utils.storage import agregar_al_historial, agregar_muestra_entrenamiento, cargar_historial, guardar_historial, guardar_estadisticas
-from models.buffer import add_to_buffer
-from models.modelo_ml import retrain_from_buffer
+from models.recomendador import calcular_estadisticas, recomendar_carreras
+from utils.storage import agregar_al_historial, cargar_historial, guardar_historial, guardar_estadisticas
 
 app = Flask(__name__)
-app.secret_key = os.getenv("FLASK_SECRET_KEY", "vocational-ai-secret-key-2024")
-ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "admin123")
+app.secret_key = 'vocational-ai-secret-key-2024'
+ADMIN_PASSWORD = os.getenv('ADMIN_PASSWORD', 'admin123')
 
 
 def login_requerido(func):
@@ -48,38 +45,16 @@ def procesar_test():
             return redirect(url_for('test'))
 
         recomendaciones = recomendar_carreras(respuestas)
-        vector_usuario = construir_vector_usuario(respuestas)
-
-
-        # Guardar historial
         historial = cargar_historial()
-        carreras = [r['carrera'] for r in recomendaciones]
-        compat = [r['compatibilidad'] for r in recomendaciones]
-        historial = agregar_al_historial(
-            historial, carreras, compat, features=vector_usuario.reshape(-1).tolist()
-        )
+        carreras_recomendadas = [r['carrera'] for r in recomendaciones]
+        compatibilidades = [r['compatibilidad'] for r in recomendaciones]
+        historial = agregar_al_historial(historial, carreras_recomendadas, compatibilidades)
 
-        # ===== BUFFER PARA HÍBRIDOS =====
-        if len(recomendaciones) >= 2:
-            p1 = recomendaciones[0]['compatibilidad']
-            p2 = recomendaciones[1]['compatibilidad']
-
-            if abs(p1 - p2) < 0.25:
-                add_to_buffer(
-                    vector_usuario.reshape(-1).tolist(),
-                    [recomendaciones[0]['carrera'], recomendaciones[1]['carrera']]
-                )
-
-        return render_template(
-            'resultados.html',
-            recomendaciones=recomendaciones,
-            fecha=datetime.now()
-        )
+        return render_template('resultados.html', recomendaciones=recomendaciones, fecha=datetime.now())
 
     except Exception as exc:
         app.logger.error("Error procesando test: %s", exc)
         return redirect(url_for('test'))
-
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ app_name }} - Resultados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-tabs">
+                <a href="{{ url_for('test') }}" class="nav-tab">Test</a>
+                <a href="{{ url_for('estadisticas') }}" class="nav-tab">Estadísticas</a>
+            </div>
+        </nav>
+
+        <div class="results-screen">
+            <h2>✨ Tu Carrera Ideal</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 30px;">
+                Basado en tu perfil vocacional
+            </p>
+
+            <div class="recommendations" style="display: flex; justify-content: center;">
+                {% for recomendacion in recomendaciones %}
+                <div class="career-card" style="max-width: 600px; width: 100%;">
+                    <div class="career-image">
+                        {{ recomendacion.carrera }}
+                    </div>
+                    <div class="career-info">
+                        <div class="career-name">{{ recomendacion.carrera }}</div>
+                        
+                        <div class="compatibility">
+                            <div class="compatibility-bar">
+                                <div class="compatibility-fill" style="width: {{ recomendacion.compatibilidad }}%"></div>
+                            </div>
+                            <div class="compatibility-text">{{ recomendacion.compatibilidad }}%</div>
+                        </div>
+                        
+                        <div class="career-description">
+                            {{ recomendacion.descripcion }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="color: #666; font-size: 13px; margin-bottom: 20px;">
+                    Fecha del test: {{ fecha.strftime('%d/%m/%Y %H:%M') }}
+                </p>
+                <a href="{{ url_for('test') }}" class="btn-primary">Hacer Otro Test</a>
+                <a href="{{ url_for('estadisticas') }}" class="btn-secondary" style="margin-left: 10px;">Ver Estadísticas</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
