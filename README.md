@@ -162,23 +162,26 @@ Archivos relevantes:
 
 ## 📁 Estructura del proyecto
 
+## 📁 Estructura del proyecto
+
+```text
 CareerMate/
 │
 ├── app.py
 │
 ├── models/
-│ ├── recomendador.py
-│ ├── modelo_ml.py
-│ ├── preguntas.py
-│ ├── carreras.py
-│ └── entrenamiento.py
+│   ├── recomendador.py
+│   ├── modelo_ml.py
+│   ├── preguntas.py
+│   ├── carreras.py
+│   └── entrenamiento.py
 │
 ├── utils/
-│ └── storage.py
+│   └── storage.py
 │
 ├── tests/
-│ ├── test_vectores_sinteticos.py
-│ └── test_ejes_profesionales.py
+│   ├── test_vectores_sinteticos.py
+│   └── test_ejes_profesionales.py
 │
 ├── CareerMap.csv
 ├── README.md
