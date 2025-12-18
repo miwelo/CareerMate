@@ -119,21 +119,6 @@ Se mide la especialización técnica vs rasgos blandos.
 
 ---
 
-### Requisitos mínimos no compensables
-Algunas habilidades son **habilitadoras obligatorias**.
-
-Ejemplos:
-- Database Administrator → Database Fundamentals
-- AI/ML Specialist → AI ML + Programming
-- Cyber Security Specialist → Cyber Security + Networking
-
-Si una feature crítica no alcanza el umbral:
-→ la carrera se excluye **aunque el ML la rankee alto**.
-
-Esta capa cierra la coherencia del sistema.
-
----
-
 ## Validación y testing
 
 El proyecto incluye tests sintéticos para:
@@ -188,34 +173,7 @@ CareerMate/
 
 ---
 
-## Qué NO hace CareerMate
-
-- No promete precisión del 100%
-- No reemplaza orientación profesional humana
-- No fuerza recomendaciones incompatibles
-- No toma decisiones opacas
-
----
-
-## Estado del proyecto
-
-- Versión: **v2.0.0**
-- Estado: **Stable / Production Ready**
-- Desarrollo funcional: **cerrado**
-
-Las mejoras futuras se enfocan en:
-- UX
-- tests adaptativos
-- despliegue como servicio
-
----
-
 ## Conclusión
-
-CareerMate demuestra que:
-- el ML debe estar subordinado a la lógica de dominio
-- la coherencia humana es prioritaria sobre métricas abstractas
-- los sistemas de recomendación reales son híbridos por diseño
 
 Este proyecto está pensado para uso real,
 no como demo académica.
