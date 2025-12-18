@@ -8,7 +8,7 @@ con sus habilidades, intereses y rasgos personales.
 
 ---
 
-## 🎯 Objetivo del proyecto
+## Objetivo del proyecto
 
 Orientar a usuarios hacia **carreras tecnológicas coherentes** a partir de:
 - habilidades técnicas
@@ -20,7 +20,7 @@ El sistema prioriza la **coherencia humana** sobre la maximización ciega de pro
 
 ---
 
-## 🧠 Enfoque general
+## Enfoque general
 
 CareerMate utiliza un **pipeline híbrido**:
 
@@ -32,7 +32,7 @@ Este enfoque evita recomendaciones lógicamente incompatibles
 
 ---
 
-## 🧩 Arquitectura del sistema
+## Arquitectura del sistema
 
 1. Respuesta al cuestionario (18 técnicas + 12 blandas)
 2. Construcción del vector de usuario (27 features)
@@ -45,7 +45,7 @@ Este enfoque evita recomendaciones lógicamente incompatibles
 
 ---
 
-## 📊 Cuestionario
+## Cuestionario
 
 ### Preguntas técnicas (18)
 Evalúan competencias específicas en áreas como:
@@ -75,7 +75,7 @@ Se usan para:
 
 ---
 
-## 📐 Vector de usuario
+## Vector de usuario
 
 - Dimensión: **27 features**
 - Rango típico por feature: **~1.5 – 2.2**
@@ -85,7 +85,7 @@ Un `std` estable indica señal suficiente sin ruido excesivo.
 
 ---
 
-## 🤖 Modelo de Machine Learning
+## Modelo de Machine Learning
 
 - Algoritmo: `SGDClassifier`
 - Tipo: clasificación multiclase
@@ -97,9 +97,9 @@ solo ordena probabilidades entre carreras permitidas.
 
 ---
 
-## 🧠 Lógica de dominio (clave del proyecto)
+## Lógica de dominio (clave del proyecto)
 
-### 1️⃣ Macro-perfiles profesionales
+### Macro-perfiles profesionales
 El sistema clasifica al usuario en uno de los siguientes macro-perfiles:
 
 - Técnico analítico (AI/ML, Data Science, Cyber)
@@ -111,7 +111,7 @@ Esto reduce ruido y evita colisiones semánticas.
 
 ---
 
-### 2️⃣ Dominancia técnica
+### Dominancia técnica
 Se mide la especialización técnica vs rasgos blandos.
 
 - Dominancia alta → se penalizan carreras generalistas
@@ -119,7 +119,7 @@ Se mide la especialización técnica vs rasgos blandos.
 
 ---
 
-### 3️⃣ Requisitos mínimos no compensables
+### Requisitos mínimos no compensables
 Algunas habilidades son **habilitadoras obligatorias**.
 
 Ejemplos:
@@ -134,7 +134,7 @@ Esta capa cierra la coherencia del sistema.
 
 ---
 
-## 🧪 Validación y testing
+## Validación y testing
 
 El proyecto incluye tests sintéticos para:
 
@@ -149,7 +149,7 @@ Archivos relevantes:
 
 ---
 
-## 🧰 Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - **Python 3**
 - **NumPy** – operaciones vectoriales
@@ -160,7 +160,7 @@ Archivos relevantes:
 
 ---
 
-## 📁 Estructura del proyecto
+## Estructura del proyecto
 
 ```text
 CareerMate/
@@ -188,7 +188,7 @@ CareerMate/
 
 ---
 
-## 🚫 Qué NO hace CareerMate
+## Qué NO hace CareerMate
 
 - No promete precisión del 100%
 - No reemplaza orientación profesional humana
@@ -197,7 +197,7 @@ CareerMate/
 
 ---
 
-## 🏁 Estado del proyecto
+## Estado del proyecto
 
 - Versión: **v2.0.0**
 - Estado: **Stable / Production Ready**
@@ -210,7 +210,7 @@ Las mejoras futuras se enfocan en:
 
 ---
 
-## 📌 Conclusión
+## Conclusión
 
 CareerMate demuestra que:
 - el ML debe estar subordinado a la lógica de dominio
