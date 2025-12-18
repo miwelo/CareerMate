@@ -162,8 +162,6 @@ Archivos relevantes:
 
 ## 📁 Estructura del proyecto
 
-## 📁 Estructura del proyecto
-
 ```text
 CareerMate/
 │
