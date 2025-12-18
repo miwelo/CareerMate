@@ -90,7 +90,7 @@ Un `std` estable indica señal suficiente sin ruido excesivo.
 - Algoritmo: `SGDClassifier`
 - Tipo: clasificación multiclase
 - Rol: **ranking de carreras**
-- Entrenamiento: previo (no se reentrena en v2)
+- Entrenamiento: previo
 
 El modelo **no decide validez profesional**,
 solo ordena probabilidades entre carreras permitidas.
@@ -119,7 +119,7 @@ Se mide la especialización técnica vs rasgos blandos.
 
 ---
 
-### 3️⃣ Requisitos mínimos no compensables (v2)
+### 3️⃣ Requisitos mínimos no compensables
 Algunas habilidades son **habilitadoras obligatorias**.
 
 Ejemplos:
